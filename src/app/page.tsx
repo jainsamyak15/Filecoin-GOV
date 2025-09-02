@@ -198,7 +198,7 @@ export default function FilecoinGovLandingPage() {
               Built for every industry
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              From startups to enterprises, OPIK adapts to your industry needs
+              From startups to enterprises, FilecoinGov adapts to your industry needs
             </p>
           </div>
 
@@ -313,9 +313,9 @@ export default function FilecoinGovLandingPage() {
 
           <div className="border-t border-slate-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-4xl font-bold mb-4 md:mb-0">OPIK</div>
+              <div className="text-4xl font-bold mb-4 md:mb-0">FilecoinGov</div>
               <div className="text-slate-400 text-sm">
-                © 2025 OPIK. Infrastructure to grow your data governance.
+                © 2025 FilecoinGov. Infrastructure to grow your data governance.
               </div>
             </div>
           </div>
@@ -323,9 +323,9 @@ export default function FilecoinGovLandingPage() {
 
         {/* Massive Brand Name */}
         <div className="relative flex items-center justify-center min-h-[30vh] px-4">
-          <h2 className="text-[clamp(8rem,20vw,25rem)] font-black bg-gradient-to-r from-orange-400 via-orange-300 to-orange-400 bg-clip-text text-transparent leading-none tracking-tighter select-none">
-            OPIK
-            </h2>
+          <h2 className="text-[clamp(8rem,17vw,25rem)] font-black bg-gradient-to-r from-orange-400 via-orange-300 to-orange-400 bg-clip-text text-transparent leading-none tracking-tighter select-none">
+            FilecoinGov
+          </h2>
         </div>
       </footer>
     </div>
