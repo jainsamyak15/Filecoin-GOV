@@ -67,7 +67,7 @@ export default function FilecoinGovLandingPage() {
 
           {/* Subheadline */}
           <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of enterprises that use OPIK to accept data governance, embed compliance services, and build a more secure data infrastructure.
+            The first decentralized enterprise governance platform is coming. Join the waitlist to be among the first to transform your data infrastructure.
           </p>
 
           {/* Value Proposition */}
@@ -88,17 +88,11 @@ export default function FilecoinGovLandingPage() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link href="#start">
+            <Link href="#waitlist">
               <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-base font-medium rounded-md shadow-lg hover:shadow-orange-500/25 transition-all duration-300">
-                Start now
+                Join waitlist
               </Button>
             </Link>
-            <Button
-              variant="outline"
-              className="border-orange-300 dark:border-orange-600 hover:bg-orange-50 dark:hover:bg-orange-900/20 px-8 py-3 text-base font-medium rounded-md"
-            >
-              Contact sales
-            </Button>
           </div>
         </div>
       </section>
@@ -255,23 +249,17 @@ export default function FilecoinGovLandingPage() {
             Ready to get started?
           </h2>
           <p className="text-xl text-orange-100 mb-12">
-            Create an account instantly to get started or contact us to design a custom package for your business.
+            Be among the first to experience the future of decentralized data governance. Join our exclusive waitlist.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button className="bg-white hover:bg-orange-50 text-orange-600 px-8 py-3 text-base font-medium rounded-md shadow-lg hover:shadow-orange-300/50 transition-all duration-300">
-              Start now
-              </Button>
-            <Button
-              variant="outline"
-              className="border-orange-300 text-white hover:bg-white hover:text-orange-600 px-8 py-3 text-base font-medium rounded-md transition-all duration-300"
-            >
-              Contact sales
+              Join waitlist
             </Button>
           </div>
 
           <div className="text-sm text-orange-200">
-            Always know what you pay with integrated per-transaction pricing and no hidden fees.
+            Get early access and exclusive updates as we build the future of enterprise data governance.
           </div>
         </div>
       </section>
@@ -327,7 +315,7 @@ export default function FilecoinGovLandingPage() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="text-4xl font-bold mb-4 md:mb-0">OPIK</div>
               <div className="text-slate-400 text-sm">
-                © 2024 OPIK. Infrastructure to grow your data governance.
+                © 2025 OPIK. Infrastructure to grow your data governance.
               </div>
             </div>
           </div>
