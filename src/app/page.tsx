@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LavaLamp } from "@/components/ui/fluid-blob";
@@ -41,6 +41,29 @@ import {
 } from "lucide-react";
 
 export default function FilecoinGovLandingPage() {
+  const [showWaitlistModal, setShowWaitlistModal] = useState(false);
+  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+  const [formData, setFormData] = useState({ name: '', email: '' });
+
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.email) {
+      setToast({ message: 'Please fill in all fields', type: 'error' });
+      return;
+    }
+
+    // Simulate API call
+    setTimeout(() => {
+      setToast({ message: 'Successfully joined the waitlist!', type: 'success' });
+      setShowWaitlistModal(false);
+      setFormData({ name: '', email: '' });
+
+      // Clear toast after 3 seconds
+      setTimeout(() => setToast(null), 3000);
+    }, 1000);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
       {/* Hero Section */}
@@ -88,11 +111,12 @@ export default function FilecoinGovLandingPage() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link href="#waitlist">
-              <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-base font-medium rounded-md shadow-lg hover:shadow-orange-500/25 transition-all duration-300">
-                Join waitlist
-              </Button>
-            </Link>
+            <Button
+              onClick={() => setShowWaitlistModal(true)}
+              className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-base font-medium rounded-md shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
+            >
+              Join waitlist
+            </Button>
           </div>
         </div>
       </section>
@@ -253,7 +277,10 @@ export default function FilecoinGovLandingPage() {
           </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button className="bg-white hover:bg-orange-50 text-orange-600 px-8 py-3 text-base font-medium rounded-md shadow-lg hover:shadow-orange-300/50 transition-all duration-300">
+            <Button
+              onClick={() => setShowWaitlistModal(true)}
+              className="bg-white hover:bg-orange-50 text-orange-600 px-8 py-3 text-base font-medium rounded-md shadow-lg hover:shadow-orange-300/50 transition-all duration-300"
+            >
               Join waitlist
             </Button>
           </div>
@@ -328,6 +355,94 @@ export default function FilecoinGovLandingPage() {
           </h2>
         </div>
       </footer>
+
+      {/* Waitlist Modal */}
+      {showWaitlistModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 max-w-md w-full shadow-2xl">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                Join the Waitlist
+              </h3>
+              <p className="text-slate-600 dark:text-slate-300">
+                Be among the first to experience FilecoinGov
+              </p>
+            </div>
+
+            <form onSubmit={handleWaitlistSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Company Email
+                </label>
+                <input
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                  placeholder="Enter your company email"
+                  required
+                />
+              </div>
+
+              <div className="flex gap-3 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowWaitlistModal(false)}
+                  className="flex-1 px-4 py-3 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 px-4 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors"
+                >
+                  Join Waitlist
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Toast Notification */}
+      {toast && (
+        <div className={`fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm ${
+          toast.type === 'success'
+            ? 'bg-green-500 text-white'
+            : 'bg-red-500 text-white'
+        }`}>
+          <div className="flex items-center gap-3">
+            <div className="flex-shrink-0">
+              {toast.type === 'success' ? (
+                <CheckCircle className="w-5 h-5" />
+              ) : (
+                <div className="w-5 h-5">⚠️</div>
+              )}
+            </div>
+            <p className="text-sm font-medium">{toast.message}</p>
+            <button
+              onClick={() => setToast(null)}
+              className="ml-2 text-white/70 hover:text-white"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
