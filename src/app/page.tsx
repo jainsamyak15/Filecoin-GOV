@@ -350,7 +350,7 @@ export default function FilecoinGovLandingPage() {
 
         {/* Massive Brand Name */}
         <div className="relative flex items-center justify-center min-h-[30vh] px-4">
-          <h2 className="text-[clamp(8rem,12vw,25rem)] font-black bg-gradient-to-r from-orange-400 via-orange-300 to-orange-400 bg-clip-text text-transparent leading-none tracking-tighter select-none">
+          <h2 className="text-[clamp(8rem,17vw,25rem)] font-black bg-gradient-to-r from-orange-400 via-orange-300 to-orange-400 bg-clip-text text-transparent leading-none tracking-tighter select-none">
             FilecoinGov
           </h2>
         </div>
