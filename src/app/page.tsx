@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LavaLamp } from "@/components/ui/fluid-blob";
 import { GooeyMarquee } from "@/components/ui/gooey-marquee";
+import ConnectWalletButton from '@/components/ConnectWalletButton';
 import {
   FileText,
   Users,
@@ -38,9 +39,10 @@ import {
   Activity,
   Layers,
   Sparkles,
+  CreditCard,
 } from "lucide-react";
 
-export default function FilecoinGovLandingPage() {
+export default function YieldBackedPaymentsLandingPage() {
   const [showWaitlistModal, setShowWaitlistModal] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '' });
@@ -76,217 +78,210 @@ export default function FilecoinGovLandingPage() {
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-full px-4 py-2 text-sm font-medium text-orange-700 dark:text-orange-300 mb-8">
-            <Sparkles className="w-4 h-4" />
-            Enterprise-grade data governance platform
+          <div className="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-full px-4 py-2 text-sm font-medium text-blue-700 dark:text-blue-300 mb-8">
+            <DollarSign className="w-4 h-4" />
+            Omnichain Merchant Payments Revolution
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight tracking-tight">
-            Infrastructure to grow
+            Payments that
             <br />
-            <span className="text-orange-600 dark:text-orange-400">your data governance</span>
+            <span className="text-blue-600 dark:text-blue-400">earn yield</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            The first decentralized enterprise governance platform is coming. Join the waitlist to be among the first to transform your data infrastructure.
+            The first omnichain merchant payment system where settlements come as yield-bearing vault shares, not idle stablecoins. Cross-chain friction solved.
           </p>
 
           {/* Value Proposition */}
           <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">70%</div>
-              <div className="text-slate-600 dark:text-slate-300">Cost reduction</div>
+              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Any</div>
+              <div className="text-slate-600 dark:text-slate-300">Chain Payment</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">99.9%</div>
-              <div className="text-slate-600 dark:text-slate-300">Compliance uptime</div>
+              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Auto</div>
+              <div className="text-slate-600 dark:text-slate-300">Yield Earning</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">15+</div>
-              <div className="text-slate-600 dark:text-slate-300">Frameworks supported</div>
+              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Zero</div>
+              <div className="text-slate-600 dark:text-slate-300">Idle Capital</div>
             </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <ConnectWalletButton />
             <Button
               onClick={() => setShowWaitlistModal(true)}
-              className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-base font-medium rounded-md shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
+              variant="outline"
+              className="px-8 py-3 text-base font-medium rounded-md border-blue-200 text-blue-600 hover:bg-blue-50 transition-all duration-300"
             >
-              Join waitlist
+              Join Waitlist
             </Button>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-orange-50 via-white to-orange-100 dark:from-orange-950/20 dark:via-slate-900 dark:to-orange-950/20">
+      <section className="py-24 px-4 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950/20 dark:via-slate-900 dark:to-blue-950/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-              A fully integrated suite of governance products
+              Yield-bearing settlement features
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Reduce costs, improve compliance, and run your data governance more efficiently on a fully integrated, AI-powered platform.
+              Merchants receive ERC-4626 vault shares that auto-earn yield, with flexible redemption options and composable transferability.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Core Features Grid */}
             <div className="space-y-8">
-              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">AI Governance Engine</h3>
-                    <p className="text-slate-600 dark:text-slate-300">Automated policy management and compliance monitoring with intelligent risk assessment</p>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Flexible Settlement</h3>
+                    <p className="text-slate-600 dark:text-slate-300">Choose between immediate USDC liquidity or yield-bearing vault shares that auto-earn returns</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Database className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <DollarSign className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Decentralized Storage</h3>
-                    <p className="text-slate-600 dark:text-slate-300">Cost-optimized data placement with Filecoin integration and cryptographic verification</p>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Yield Offsets Fees</h3>
+                    <p className="text-slate-600 dark:text-slate-300">Protocol, bridge, and gas fees are covered by vault yield, making payments cheaper than traditional rails</p>
                   </div>
             </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Network className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">DAO Governance</h3>
-                    <p className="text-slate-600 dark:text-slate-300">Democratic decision-making with smart contracts and transparent treasury management</p>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Transferable Vault Shares</h3>
+                    <p className="text-slate-600 dark:text-slate-300">Directly transfer yield-earning vault shares to suppliers, employees, or partners as ERC-20 receipts</p>
                   </div>
             </div>
               </div>
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <CreditCard className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Compliance Automation</h3>
-                    <p className="text-slate-600 dark:text-slate-300">Multi-framework support with automated reporting and evidence collection</p>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Credit-like Functionality</h3>
+                    <p className="text-slate-600 dark:text-slate-300">Vault share holdings enable credit lines for borrowing or early payments against future earnings</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
+              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Eye className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Layers className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Real-time Monitoring</h3>
-                    <p className="text-slate-600 dark:text-slate-300">Continuous compliance monitoring with predictive risk scoring and alerts</p>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Split Payments</h3>
+                    <p className="text-slate-600 dark:text-slate-300">Receive part in immediate USDC liquidity and part in yield-earning vault shares for optimal cash flow</p>
                   </div>
             </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Lock className="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">Zero-Trust Security</h3>
-                    <p className="text-slate-600 dark:text-slate-300">Cryptographic verification and role-based access control with blockchain audit trails</p>
-                  </div>
-            </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* By Industry Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-orange-100 via-white to-orange-50 dark:from-orange-950/30 dark:via-slate-900 dark:to-orange-950/20">
+      {/* Tech Stack Section */}
+      <section className="py-24 px-4 bg-gradient-to-br from-blue-100 via-white to-blue-50 dark:from-blue-950/30 dark:via-slate-900 dark:to-blue-950/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-              Built for every industry
+              Built on battle-tested tech
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              From startups to enterprises, FilecoinGov adapts to your industry needs
+              Omnichain payments powered by leading DeFi protocols and cross-chain infrastructure
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Financial Services</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">SOX, PCI DSS, and regulatory compliance automation for financial institutions</p>
-              <div className="text-orange-600 dark:text-orange-400 text-sm font-medium">Learn more →</div>
+                        <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Smart Contracts</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">Settlement + routing contracts with ERC-4626 vault integrations (Aave/Morpho/Euler)</p>
+              <div className="text-blue-600 dark:text-blue-400 text-sm font-medium">View contracts →</div>
             </div>
 
-                        <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Healthcare</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">HIPAA compliance with patient data protection and audit trails</p>
-              <div className="text-orange-600 dark:text-orange-400 text-sm font-medium">Learn more →</div>
+                        <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Cross-Chain + Swaps</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">1inch API for swaps, Circle CCTP / LayerZero for bridging across any chain</p>
+              <div className="text-blue-600 dark:text-blue-400 text-sm font-medium">View integrations →</div>
             </div>
 
-            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Technology</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">GDPR, CCPA compliance for SaaS companies and data platforms</p>
-              <div className="text-orange-600 dark:text-orange-400 text-sm font-medium">Learn more →</div>
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Frontend / Dashboard</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">Next.js + Wagmi + Ethers.js/Viem with Coinbase Embedded Wallets</p>
+              <div className="text-blue-600 dark:text-blue-400 text-sm font-medium">View dashboard →</div>
           </div>
 
-            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Manufacturing</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">ISO 27001 and supply chain data sovereignty compliance</p>
-              <div className="text-orange-600 dark:text-orange-400 text-sm font-medium">Learn more →</div>
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Yield Vaults</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">ERC-4626 compliant vaults from Aave, Morpho, or Euler for auto-yield generation</p>
+              <div className="text-blue-600 dark:text-blue-400 text-sm font-medium">View vaults →</div>
             </div>
 
-            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Retail & E-commerce</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">PCI DSS and consumer data protection compliance</p>
-              <div className="text-orange-600 dark:text-orange-400 text-sm font-medium">Learn more →</div>
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Optional Infra</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">Chainlink price feeds and The Graph subgraphs for enhanced UX and analytics</p>
+              <div className="text-blue-600 dark:text-blue-400 text-sm font-medium">View infra →</div>
             </div>
 
-            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-orange-200 dark:border-orange-800 hover:shadow-orange-200/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Government</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">FedRAMP, FISMA compliance with decentralized security</p>
-              <div className="text-orange-600 dark:text-orange-400 text-sm font-medium">Learn more →</div>
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-800 hover:shadow-blue-200/50 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Merchant Dashboard</h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">Real-time vault share balance, yield tracking, and flexible redemption options</p>
+              <div className="text-blue-600 dark:text-blue-400 text-sm font-medium">View demo →</div>
             </div>
           </div>
         </div>
       </section>
 
                   {/* Ready to get started */}
-      <section className="py-24 px-4 bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600 text-white">
+      <section className="py-24 px-4 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to get started?
+            Ready to earn yield on payments?
           </h2>
-          <p className="text-xl text-orange-100 mb-12">
-            Be among the first to experience the future of decentralized data governance. Join our exclusive waitlist.
+          <p className="text-xl text-blue-100 mb-12">
+            Be among the first merchants to receive payments as yield-bearing vault shares. Join our exclusive waitlist.
           </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button
-              onClick={() => setShowWaitlistModal(true)}
-              className="bg-white hover:bg-orange-50 text-orange-600 px-8 py-3 text-base font-medium rounded-md shadow-lg hover:shadow-orange-300/50 transition-all duration-300"
-            >
-              Join waitlist
-            </Button>
+              <ConnectWalletButton />
+              <Button
+                onClick={() => setShowWaitlistModal(true)}
+                variant="outline"
+                className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-base font-medium rounded-md transition-all duration-300"
+              >
+                Join Waitlist
+              </Button>
           </div>
 
-          <div className="text-sm text-orange-200">
-            Get early access and exclusive updates as we build the future of enterprise data governance.
+          <div className="text-sm text-blue-200">
+            Get early access and exclusive updates as we build the future of omnichain merchant payments.
           </div>
         </div>
       </section>
@@ -300,27 +295,27 @@ export default function FilecoinGovLandingPage() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Products</h3>
               <ul className="space-y-2 text-slate-300">
-                <li><a href="#" className="hover:text-white">Governance Engine</a></li>
-                <li><a href="#" className="hover:text-white">Compliance Automation</a></li>
-                <li><a href="#" className="hover:text-white">Decentralized Storage</a></li>
-                <li><a href="#" className="hover:text-white">DAO Framework</a></li>
+                <li><a href="#" className="hover:text-white">Yield Vaults</a></li>
+                <li><a href="#" className="hover:text-white">Cross-Chain Payments</a></li>
+                <li><a href="#" className="hover:text-white">Merchant Dashboard</a></li>
+                <li><a href="#" className="hover:text-white">Split Settlements</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4">Solutions</h3>
+              <h3 className="text-lg font-semibold mb-4">Protocols</h3>
               <ul className="space-y-2 text-slate-300">
-                <li><a href="#" className="hover:text-white">Financial Services</a></li>
-                <li><a href="#" className="hover:text-white">Healthcare</a></li>
-                <li><a href="#" className="hover:text-white">Technology</a></li>
-                <li><a href="#" className="hover:text-white">Manufacturing</a></li>
+                <li><a href="#" className="hover:text-white">ERC-4626 Vaults</a></li>
+                <li><a href="#" className="hover:text-white">Aave Integration</a></li>
+                <li><a href="#" className="hover:text-white">Morpho Protocol</a></li>
+                <li><a href="#" className="hover:text-white">Euler Finance</a></li>
               </ul>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold mb-4">Developers</h3>
               <ul className="space-y-2 text-slate-300">
-                <li><a href="#" className="hover:text-white">Documentation</a></li>
+                <li><a href="#" className="hover:text-white">Smart Contracts</a></li>
                 <li><a href="#" className="hover:text-white">API Reference</a></li>
                 <li><a href="#" className="hover:text-white">SDK</a></li>
                 <li><a href="#" className="hover:text-white">Integrations</a></li>
@@ -340,9 +335,9 @@ export default function FilecoinGovLandingPage() {
 
           <div className="border-t border-slate-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-4xl font-bold mb-4 md:mb-0">FilecoinGov</div>
+              <div className="text-4xl font-bold mb-4 md:mb-0">YieldBacked</div>
               <div className="text-slate-400 text-sm">
-                © 2025 FilecoinGov. Infrastructure to grow your data governance.
+                © 2025 YieldBacked. Payments that earn yield, not idle capital.
               </div>
             </div>
           </div>
@@ -350,8 +345,8 @@ export default function FilecoinGovLandingPage() {
 
         {/* Massive Brand Name */}
         <div className="relative flex items-center justify-center min-h-[30vh] px-4">
-          <h2 className="text-[clamp(8rem,17vw,25rem)] font-black bg-gradient-to-r from-orange-400 via-orange-300 to-orange-400 bg-clip-text text-transparent leading-none tracking-tighter select-none">
-            FilecoinGov
+          <h2 className="text-[clamp(8rem,17vw,25rem)] font-black bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 bg-clip-text text-transparent leading-none tracking-tighter select-none">
+            YieldBacked
           </h2>
         </div>
       </footer>
@@ -365,7 +360,7 @@ export default function FilecoinGovLandingPage() {
                 Join the Waitlist
               </h3>
               <p className="text-slate-600 dark:text-slate-300">
-                Be among the first to experience FilecoinGov
+                Be among the first merchants to receive yield-bearing payments
               </p>
             </div>
 
@@ -378,7 +373,7 @@ export default function FilecoinGovLandingPage() {
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
                   placeholder="Enter your full name"
                   required
                 />
@@ -392,7 +387,7 @@ export default function FilecoinGovLandingPage() {
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
+                  className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-slate-700 dark:text-white"
                   placeholder="Enter your company email"
                   required
                 />
@@ -408,7 +403,7 @@ export default function FilecoinGovLandingPage() {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors"
+                  className="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
                 >
                   Join Waitlist
                 </button>
